@@ -29,7 +29,7 @@ public class World {
         }
 
         for (GameCharacter c : characters){
-          if (x == c.x && y == c.y){
+          if (x == c.x && y == c.y && c.isVisible){
             symbol = c.getSymbol();
           }
         }

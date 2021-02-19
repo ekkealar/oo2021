@@ -7,7 +7,7 @@ public class Game {
     int height = 10;
 
     World world = new World(width, height);
-    GameCharacter player = new GameCharacter("Raimo", 2, 3, 'C', GameCharacterType.WIZARD);
+    GameCharacter player = new GameCharacter("Raimo", 8, 8, 'P', GameCharacterType.WIZARD);
     GameCharacter dummy = new GameCharacter("Dummy", 5, 6, 'D', GameCharacterType.WIZARD);
     GameCharacter witch = new GameCharacter("Witch", 8, 9, '?', GameCharacterType.WIZARD);
 
@@ -38,8 +38,18 @@ public class Game {
         player.setDirection(Direction.DOWN);
       }
 
-      // player == witch => 
-      // telepordib playeri suvalisse kohta (width, height piires)
+      if (player.x == witch.x && player.y == witch.y){
+        player.x = (int)(Math.random() * width - 1) + 1;
+        player.y = (int)(Math.random() * height - 1) + 1;
+
+        /* if (dummy.isVisible){
+          dummy.isVisible = false;
+        } else {
+          dummy.isVisible = true;
+        } */
+
+        dummy.isVisible = dummy.isVisible ? false : true;
+      }
 
       world.render();
       System.out.println(player);

@@ -3,6 +3,7 @@ public class GameCharacter {
   public int y;
   public String name;
   private char symbol;
+  public boolean isVisible = true;
 
   private Direction direction;
 
