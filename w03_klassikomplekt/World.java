@@ -1,16 +1,18 @@
+import java.util.ArrayList;
+
 public class World {
   private int width;
   private int height;
 
-  private GameCharacter gameCharacter;
+  private ArrayList<GameCharacter> characters;
 
   public World(int width, int height){
     this.width = width;
     this.height = height;
   }
 
-  public void addCharacter(GameCharacter c){
-    this.gameCharacter = c;
+  public void addCharacters(ArrayList<GameCharacter> c){
+    this.characters = c;
   }
 
   public void render(){
@@ -26,8 +28,10 @@ public class World {
           symbol = ' ';
         }
 
-        if (gameCharacter.x == x && gameCharacter.y == y){
-          symbol = 'C';
+        for (GameCharacter c : characters){
+          if (x == c.x && y == c.y){
+            symbol = c.getSymbol();
+          }
         }
 
         System.out.print(symbol);

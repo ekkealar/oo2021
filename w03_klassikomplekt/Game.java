@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
@@ -6,9 +7,16 @@ public class Game {
     int height = 10;
 
     World world = new World(width, height);
-    GameCharacter player = new GameCharacter("Raimo", 2, 3, GameCharacterType.WIZARD);
+    GameCharacter player = new GameCharacter("Raimo", 2, 3, 'C', GameCharacterType.WIZARD);
+    GameCharacter dummy = new GameCharacter("Dummy", 5, 6, 'D', GameCharacterType.WIZARD);
+    GameCharacter witch = new GameCharacter("Witch", 8, 9, '?', GameCharacterType.WIZARD);
 
-    world.addCharacter(player);
+    ArrayList<GameCharacter> characters = new ArrayList<>();
+    characters.add(player);
+    characters.add(dummy);
+    characters.add(witch);
+
+    world.addCharacters(characters);
     world.render();
     System.out.println(player);
 
@@ -16,15 +24,22 @@ public class Game {
     String input = "";
 
     while(!input.equals("end")){
-      input = scanner.nextLine();
+      input = scanner.nextLine().toLowerCase();
 
       if (input.equals("")){
         player.move();
-      } else if (input.toLowerCase().equals("l")){
+      } else if (input.equals("l")){
         player.setDirection(Direction.LEFT);
+      } else if (input.equals("r")){
+        player.setDirection(Direction.RIGHT);
+      } else if (input.equals("u")){
+        player.setDirection(Direction.UP);
+      } else if (input.equals("d")){
+        player.setDirection(Direction.DOWN);
       }
 
-      
+      // player == witch => 
+      // telepordib playeri suvalisse kohta (width, height piires)
 
       world.render();
       System.out.println(player);

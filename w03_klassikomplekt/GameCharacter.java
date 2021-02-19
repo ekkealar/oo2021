@@ -1,20 +1,25 @@
 public class GameCharacter {
   public int x;
   public int y;
-
   public String name;
+  private char symbol;
 
   private Direction direction;
 
   private GameCharacterType gameCharacterType;
 
-  public GameCharacter(String name, int x, int y, GameCharacterType gameCharacterType){
+  public GameCharacter(String name, int x, int y, char symbol, GameCharacterType gameCharacterType){
     this.name = name;
     this.gameCharacterType = gameCharacterType;
     this.direction = Direction.RIGHT;
+    this.symbol = symbol;
 
     this.x = x;
     this.y = y;
+  }
+
+  public char getSymbol(){
+    return symbol;
   }
 
   public void setDirection(Direction d){
