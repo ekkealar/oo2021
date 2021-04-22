@@ -62,12 +62,6 @@ public static void laud() {
     public static boolean voitja(int liigutus1, int liigutus2) {
         if(laud[1][liigutus2] == laud[2][liigutus2] && laud[1][liigutus2] == laud[3][liigutus2])
             return true;
-        if(laud[liigutus1][1] == laud[liigutus1][2] && laud[liigutus1][1] == laud[liigutus1][3])
-            return true;
-        if(laud[1][1] == laud[2][2] && laud[1][1] == laud[3][3] && laud[2][2] != '_')
-            return true;
-        if(laud[1][3] == laud[2][2] && laud[1][3] == laud[3][1] && laud[2][2] != '_')
-            return true;
         return false;
     }
 }

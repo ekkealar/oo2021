@@ -1,0 +1,6 @@
+tallinn,1
+tartu,2
+parnu,3
+rapla,4
+haapsalu,9
+narva,15
