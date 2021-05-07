@@ -1,3 +1,5 @@
+Valik - Sõnade lõputähed
+
 Kolmepunktilise kontrolltöö punktide lahendused.
 
 Teise kontrolltöö tulemus on eksamihinde aluseks:
