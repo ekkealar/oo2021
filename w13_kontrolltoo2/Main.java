@@ -12,12 +12,20 @@ public class Main {
 
     static void printLastChar(String content)
     {
+        content = content.replaceAll("[^a-zA-Z0-9]", " ");
+
+        String characters = "";
 
         for (int i = 1; i < content.length(); i++) {
-  
-            if (content.charAt(i) != '.')
-                if (content.charAt(i) == ' ')
-                System.out.print(content.charAt(i - 1) + " ");
+            if (content.charAt(i) == '.'){
+                characters += (content.charAt(i - 2));
+                // System.out.print(content.charAt(i - 2) + " ");
+            } else if (content.charAt(i) == ' ' && content.charAt(i) != '.') {
+                // System.out.print(content.charAt(i - 1) + " ");
+                characters += (content.charAt(i - 1));
+            }
         }
+
+        System.out.println("tere: " + characters);
     }
 }
