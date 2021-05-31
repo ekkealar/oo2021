@@ -1,3 +1,5 @@
+package Homework;
+
 import java.util.ArrayList;
 
 public class Homework {
@@ -6,8 +8,6 @@ public class Homework {
   public static void main(String[] args) {
     System.err.println("Started");
     doSomething();
-
-  
 
     Homework hw = new Homework();
 
